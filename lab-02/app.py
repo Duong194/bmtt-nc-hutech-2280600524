@@ -99,3 +99,52 @@ def playfair_decrypt():
 #main function
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port = 5050, debug = True)
+
+# from flask import Flask, render_template, request, jsonify
+# from cipher.caesar import CaesarCipher
+# from cipher.vigenere import VigenereCipher
+# from cipher.railfence import RailFenceCipher
+# from cipher.playfair import PlayFairCipher
+# import os
+# import subprocess
+
+# # Định nghĩa đường dẫn đến các script trong lab-03
+# LAB03_DIR = os.path.join(os.path.dirname(__file__), "..", "lab-03")
+# CAESAR_SCRIPT = os.path.join(LAB03_DIR, "caesar_cipher.py")
+# VIGENERE_SCRIPT = os.path.join(LAB03_DIR, "vigenere_cipher.py")
+# RAILFENCE_SCRIPT = os.path.join(LAB03_DIR, "railfence_cipher.py")
+# PLAYFAIR_SCRIPT = os.path.join(LAB03_DIR, "playfair_cipher.py")
+
+# app = Flask(__name__)
+
+# @app.route("/")
+# def home():
+#     return render_template('index.html')
+
+# # Hàm chạy file mã hóa tương ứng
+# def run_script(script_path):
+#     try:
+#         subprocess.Popen(["python", script_path], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+#         return jsonify({"message": f"Đang chạy {os.path.basename(script_path)}!"})
+#     except Exception as e:
+#         return jsonify({"error": str(e)}), 500
+
+# # Route chạy từng thuật toán
+# @app.route("/run-caesar", methods=["GET"])
+# def run_caesar():
+#     return run_script(CAESAR_SCRIPT)
+
+# @app.route("/run-vigenere", methods=["GET"])
+# def run_vigenere():
+#     return run_script(VIGENERE_SCRIPT)
+
+# @app.route("/run-railfence", methods=["GET"])
+# def run_railfence():
+#     return run_script(RAILFENCE_SCRIPT)
+
+# @app.route("/run-playfair", methods=["GET"])
+# def run_playfair():
+#     return run_script(PLAYFAIR_SCRIPT)
+
+# if __name__ == "__main__":
+#     app.run(host="0.0.0.0", port=5050, debug=True)
