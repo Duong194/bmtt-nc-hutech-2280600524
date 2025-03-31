@@ -1,0 +1,5 @@
+{
+  "cSpell.words": ["jsonify"],
+  "cSpell.diagnosticLevelFlaggedWords": "Error",
+  "python.analysis.extraPaths": ["./lab-03"]
+}
